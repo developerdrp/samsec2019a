@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Basic Javascript</title>
+</head>
+<body>
+
+	<button onclick="add()">Add</button>
+
+	<button onclick="oddEven()">Odd Even</button>
+
+
+	<button onclick="factrial()">Factrial</button>
+	
+
+
+	<button onclick="mulTable()">Multiplication</button>
+
+
+	<div id="mulresult"></div>
+
+<!-- inline javascript code is below on the paragraph-->
+	<p onclick="alert('You have clicked me');">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+</p>
+<table border=1 cellpadding=8 cellspacing=8 width=800 align="center">
+	<tr>
+	<script>
+		for(i=1; i<=100;i++)
+		{
+			if(i%10==0)
+			{
+				document.write("<td>"+i+"</td>");
+				document.write("</tr><tr>");
+			}
+			else{
+			document.write("<td>"+i+"</td>");
+			}
+		}
+	</script>
+</tr>
+</table>
+
+
+<script>
+	/* Embedded
+		javascript */
+
+	//Embedded javascript
+	//alert("Good morning from embedded");
+</script>
+
+<script src="js/external.js"></script>
+
+</body>
+</html>
