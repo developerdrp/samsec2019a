@@ -3,7 +3,16 @@
 <head>
 	<title>Login Form</title>
 </head>
-<body>
+<body onload="currentDate()">
+
+	<div id="currentDate"></div>
+	<br/>
+	<div>
+		<span id="hh"></span>:
+		<span id="mm"></span>:
+		<span id="ss"></span>
+	</div>
+
 	<div id="error"></div>
 	<form method="POST" name="login" action="#" enctype="multipart/form-data" onsubmit="return validateForm()">
 		<fieldset>
