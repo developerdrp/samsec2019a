@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+	<script>
+	var fruits = ["Apple", "Banana", "Mango", "Orange", "Papaya"];
+ 
+	document.write(fruits.indexOf("Apple")); // Prints: 0
+	document.write(fruits.indexOf("Banana")); // Prints: 1
+	document.write(fruits.indexOf("Pineapple")); // Prints: -1
+
+	//print by using forEach Loop
+	fruits.forEach(myFruits);
+
+	function myFruits(index, item)
+	{
+		document.write(index+" = "+item+"</br>");
+	}
+
+
+	document.write(fruits[0]); // Prints: Apple
+document.write(fruits[1]); // Prints: Banana
+document.write(fruits[2]); // Prints: Mango
+document.write(fruits[fruits.length - 1]); // Prints: Papaya
+
+
+//getting the length
+document.write(fruits.length); // Prints: 5
+
+
+//looping 
+for(var i = 0; i < fruits.length; i++) {    
+    document.write(fruits[i] + "<br>"); // Print array element
+}
+
+
+// Iterates over array elements
+for(var fruit of fruits) {    
+    document.write(fruit + "<br>"); // Print array element
+}
+
+// Loop through all the elements in the array 
+for(var i in fruits) {  
+    document.write(fruits[i] + "<br>");
+}
+
+fruits.push("Pineapple");
+ 
+document.write(fruits); // Prints: Red,Green,Blue,Yellow
+document.write(fruits.length); // Prints: 6
+
+
+//to add in begining
+fruits.unshift("Mango Malda");
+ 
+document.write(fruits); // Prints: Yellow,Red,Green,Blue
+document.write(fruits.length); // Prints: 
+
+//push and shift
+var colors = ["Red", "Green", "Blue"];
+colors.push("Pink", "Voilet");
+colors.unshift("Yellow", "Grey");
+ 
+document.write(colors); // Prints: Yellow,Grey,Red,Green,Blue,Pink,Voilet
+document.write(colors.length); // Prints: 7
+
+
+//remove elements from array
+var colors = ["Red", "Green", "Blue"];
+var last = colors.pop();
+ 
+document.write(last); // Prints: Blue
+document.write(colors.length); // Prints: 2
+
+//remove first element by shift
+var colors = ["Red", "Green", "Blue"];
+var first = colors.shift();
+ 
+document.write(first); // Prints: Red
+document.write(colors.length); // Prints: 2
+
+
+//adding and removing any elements at any position
+var colors = ["Red", "Green", "Blue"];
+var removed = colors.splice(0,1); // Remove the first element
+ 
+document.write(colors); // Prints: Green,Blue
+document.write(removed); // Prints: Red (one item array)
+document.write(removed.length); // Prints: 1
+ 
+removed = colors.splice(1, 0, "Pink", "Yellow"); // Insert two items at position one
+document.write(colors); // Prints: Green,Pink,Yellow,Blue
+document.write(removed); // Empty array
+document.write(removed.length); // Prints: 0
+ 
+removed = colors.splice(1, 1, "Purple", "Voilet"); // Insert two values, remove one
+document.write(colors); //Prints: Green,Purple,Voilet,Yellow,Blue
+document.write(removed); // Prints: Pink (one item array)
+document.write(removed.length); // Prints: 1
+
+
+//creating string from array
+var colors = ["Red", "Green", "Blue"];
+ 
+document.write(colors.join()); // Prints: Red,Green,Blue
+document.write(colors.join("")); // Prints: RedGreenBlue
+document.write(colors.join("-")); // Prints: Red-Green-Blue
+document.write(colors.join(", ")); // Prints: Red, Green, 
+
+
+//array to comma seperated string
+var colors = ["Red", "Green", "Blue"];
+document.write(colors.toString()); // Prints: Red,Green,Blue
+
+//extract protion of array
+var fruits = ["Apple", "Banana", "Mango", "Orange", "Papaya"];
+var subarr = fruits.slice(1, 3);
+document.write(subarr); // Prints: Banana,Mango
+
+
+//extract end of array
+var fruits = ["Apple", "Banana", "Mango", "Orange", "Papaya"];
+ 
+document.write(fruits.slice(2)); // Prints: Mango,Orange,Papaya
+document.write(fruits.slice(-2)); // Prints: Orange,Papaya
+document.write(fruits.slice(2, -1)); // Prints: Mango,Orange
+
+
+//merge two or more array
+var pets = ["Cat", "Dog", "Parrot"];
+var wilds = ["Tiger", "Wolf", "Zebra"];
+ 
+// Creating new array by combining pets and wilds arrays
+var animals = pets.concat(wilds); 
+document.write(animals); // Prints: Cat,Dog,Parrot,Tiger,Wolf,Zebra
+
+//concat
+var pets = ["Cat", "Dog", "Parrot"];
+var wilds = ["Tiger", "Wolf", "Zebra"];
+var bugs = ["Ant", "Bee"];
+ 
+// Creating new array by combining pets, wilds and bugs arrays
+var animals = pets.concat(wilds, bugs); 
+document.write(animals); // Prints: Cat,Dog,Parrot,Tiger,Wolf,Zebra,Ant,Bee
+
+
+//serach through an array
+var fruits = ["Apple", "Banana", "Mango", "Orange", "Papaya"];
+ 
+document.write(fruits.indexOf("Apple")); // Prints: 0
+document.write(fruits.indexOf("Banana")); // Prints: 1
+document.write(fruits.indexOf("Pineapple")); // Prints: -1
+
+
+var arr = [1, 0, 3, 1, false, 5, 1, 4, 7];
+ 
+// Searching forwards, starting at from- index
+document.write(arr.indexOf(1, 2)); // Prints: 3
+ 
+// Searching backwards, starting at from index
+document.write(arr.lastIndexOf(1, 2)); // Prints: 0
+
+//include  indexOf lastIndexOf
+var arr = [1, 0, 3, 1, false, 5, 1, 4, 7];
+ 
+document.write(arr.includes(1)); // Prints: true
+document.write(arr.includes(6)); // Prints: false
+document.write(arr.includes(1, 2)); // Prints: true
+document.write(arr.includes(3, 4)); // Prints: false
+
+
+//find findIndex
+var arr = [1, 0, 3, 1, false, 5, 1, 4, 7];
+ 
+var result = arr.find(function(element) {
+  return element > 4;
+});
+document.write(result); // Prints: 5
+
+
+var arr = [1, 0, 3, 1, false, 5, 1, 4, 7];
+ 
+var result = arr.findIndex(function(element) {
+  return element > 6;
+});
+document.write(result); // Prints: 8
+
+
+//filter
+var arr = [1, 0, 3, 1, false, 5, 1, 4, 7];
+ 
+var result = arr.filter(function(element) {
+  return element > 4;
+});
+document.write(result); // Prints: 5,7
+document.write(result.length); // Prints: 2
+	</script>
+
+</body>
+
+
+
+</html>

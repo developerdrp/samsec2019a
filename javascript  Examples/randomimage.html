@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+     <title>Random Image</title>
+     <script language="JavaScript">
+		window.onload = choosePic;
+		var theAd = 0;
+
+		var myPix = ["images/1.jpg","images/2.jpg","images/3.jpg","images/4.jpg","images/5.jpg","images/6.jpg","images/7.jpg","images/8.jpg"];
+		length=myPix.length;
+		
+		function choosePic() {
+		var randomNum = Math.floor(Math.random() * length );
+		document.getElementById("myPicture").src = myPix[randomNum];
+		rotate();
+		}
+		
+		
+	function rotate() {
+	
+     theAd++;
+     if (theAd == myPix.length) {
+        theAd = 0;
+     }
+     document.getElementById("myPicture").src = myPix[theAd];
+
+     setTimeout(rotate, 3 * 1000);
+}
+	 
+	 
+	 </script>
+     
+</head>
+<body>
+     <img src="images/1.jpg" width="305" height="312" id="myPicture" alt="some image">
+</body>
+</html>

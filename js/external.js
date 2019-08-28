@@ -102,6 +102,11 @@ function validateForm()
 	else if(username=='admin' && password=='admin')
 	{
 		document.getElementById('error').innerHTML="Password Match";
+
+		 setTimeout(function(){
+            window.location.href='layout.html'}, 1000
+         );
+
 		return false;
 	}
 	else
@@ -157,13 +162,16 @@ function currentTime()
 	hh=t.getHours();//0-23
 	mm=t.getMinutes();
 	ss=t.getSeconds();
+	ms=t.getMilliseconds();
 	ampm=hh<=11?"AM":"PM";
 	document.getElementById('hh').innerHTML=hh;
 	document.getElementById('mm').innerHTML=mm;
-	document.getElementById('ss').innerHTML=ss +" "+ampm;
+	document.getElementById('ss').innerHTML=ss;
+
+	document.getElementById('ms').innerHTML=ms +" "+ampm;
 }
 
 function refreshTime()
 {
-	setInterval(currentTime, 1000);
+	setInterval(currentTime, 200);
 }

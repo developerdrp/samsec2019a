@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>
+JavaScript Start Stop Clock
+</title>
+
+</head>
+
+<body>
+
+
+<div id="clock">
+    <span id="hour">hh</span>:<span id="min">mm</span>:<span id="sec">ss</span>
+</div>
+<input type="button" onclick="clockStart()" value="Start"/>
+<input type="button" onclick="clockStop()" value="Stop"/>
+<script>
+var timerId // current timer if started
+
+function clockStart() {  
+  if (timerId) return
+
+  timerId = setInterval(update, 1000)
+  update()  // (*)
+}
+
+function clockStop() {
+  clearInterval(timerId)
+  timerId = null
+}
+
+function update() {
+  var date = new Date()
+
+  var hours = date.getHours()
+  if (hours < 10) hours = '0'+hours
+  document.getElementById('hour').innerHTML = hours
+
+  var minutes = date.getMinutes()
+  if (minutes < 10) minutes = '0'+minutes
+  document.getElementById('min').innerHTML = minutes
+
+  var seconds = date.getSeconds()
+  if (seconds < 10) seconds = '0'+seconds
+  document.getElementById('sec').innerHTML = seconds
+}
+</script>
+</body>
+</html>
